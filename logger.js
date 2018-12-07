@@ -1,5 +1,6 @@
 module.exports = (hydra, config) => {
   const ServerRequest = require('./serverRequest');
+  const Utils = hydra.getUtilsHelper();
 
   let serverRequest = new ServerRequest();
   if (config.remoteLogger && config.remoteLogger.protocol) {
@@ -32,7 +33,6 @@ module.exports = (hydra, config) => {
       if (typeof message === 'string') {
         text = message;
       } else {
-        const Utils = hydra.getUtilsHelper();
         text = Utils.safeJSONStringify(message);
       }
       console.log(`${ts} ${type.toUpperCase()} ${fromName} | ${text}`);
