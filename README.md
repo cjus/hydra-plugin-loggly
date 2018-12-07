@@ -1,6 +1,11 @@
 # hydra-plugin-loggly
 Hydra logging plugin for use with loggly.com
 
+Install using npm:  npm install hydra-plugin-loggly --save
+
+
+Can be used with other remote http logging services or serve as the basis of a new logging plugin.
+
 ```
   "hydra": {
     "serviceName": "yourservicename",
@@ -27,4 +32,4 @@ Hydra logging plugin for use with loggly.com
   }
 ```
 
-Support HTTP / HTTPS in the remoteLogger section.
+Supports HTTP / HTTPS in the remoteLogger section.
