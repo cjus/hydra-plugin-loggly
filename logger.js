@@ -47,14 +47,14 @@ module.exports = (hydra, config) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: {
+        body: Utils.safeJSONStringify({
           ts,
           serviceName: fromName,
           serviceVersion: hydra.getInstanceVersion(),
           instanceID: hydra.getInstanceID(),
           severity: type,
-          body: Utils.safeJSONStringify(message)
-        }
+          body: message
+        })
       });
     }
   }
