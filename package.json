@@ -1,0 +1,16 @@
+{
+  "name": "hydra-plugin-loggly",
+  "version": "0.1.0",
+  "description": "Hydra Plugin for the Loggly Logging Service",
+  "author": "Carlos Justiniano <carlos.justiniano@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjus/hydra-plugin-loggly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cjus/hydra-plugin-loggly/issues"
+  },
+  "homepage": "https://github.com/cjus/hydra-plugin-loggly#readme"
+}
