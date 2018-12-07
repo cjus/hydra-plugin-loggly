@@ -20,7 +20,7 @@ Can be used with other remote http logging services or serve as the basis of a n
           "protocol": "http",
           "hostname": "logs-01.loggly.com",
           "port": 80,
-          "path": "/inputs/{loggly-token}/tag/http/",
+          "path": "/inputs/{loggly-token}/tag/http/"
         },
         "logToConsole": true,
         "onlyLogLocally": false
