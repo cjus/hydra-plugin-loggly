@@ -10,7 +10,7 @@ module.exports = (hydra, config) => {
   /**
    * @name log
    * @summary logs a message
-   * @param {string} type - type of message: 'info', 'error', 'fatal' or other
+   * @param {string} type - type of message: 'info', 'debug', 'error', 'fatal' or other
    * @param {object / string} message - message to log
    * @return {undefined}
    */
