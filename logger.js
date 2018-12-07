@@ -53,7 +53,7 @@ module.exports = (hydra, config) => {
           serviceVersion: hydra.getInstanceVersion(),
           instanceID: hydra.getInstanceID(),
           severity: type,
-          body: message
+          body: Utils.safeJSONStringify(message)
         }
       });
     }
