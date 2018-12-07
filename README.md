@@ -15,7 +15,7 @@ Can be used with other remote http logging services or serve as the basis of a n
     "serviceType": "",
     "plugins": {
       "hydraLogger": {
-        "remoteLogger"
+        "remoteLogger": {
           "method": "POST",
           "protocol": "http",
           "hostname": "logs-01.loggly.com",
