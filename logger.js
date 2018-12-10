@@ -40,10 +40,10 @@ module.exports = (hydra, config) => {
 
     if (!settings.onlyLogLocally) {
       serverRequest.send({
-        method: settings.loggly.method,
-        port: settings.loggly.port,
-        hostname: settings.loggly.hostname,
-        path: settings.loggly.path,
+        method: settings.method,
+        port: settings.port,
+        hostname: settings.hostname,
+        path: settings.path,
         headers: {
           'Content-Type': 'application/json'
         },
