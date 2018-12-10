@@ -22,7 +22,9 @@ module.exports = (hydra, config) => {
       console.error('Missing loggly section in app config. See docs at: https://github.com/cjus/hydra-plugin-loggly')
       return;
     }
-
+    if (!type || type === '') {
+      type = 'fatal';
+    }
     let from = `${hydra.getServiceName()}:/`;
     let fromName = from.replace(':/','');
     let ts = new Date().getTime() / 1000 | 0;
