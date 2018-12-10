@@ -15,14 +15,12 @@ Your service config:
     "servicePort": 82,
     "serviceType": "",
     "plugins": {
-      "hydraLogger": {
-        "remoteLogger": {
-          "method": "POST",
-          "protocol": "http",
-          "hostname": "logs-01.loggly.com",
-          "port": 80,
-          "path": "/inputs/{loggly-token}/tag/http/"
-        },
+      "loggly": {
+        "method": "POST",
+        "protocol": "http",
+        "hostname": "logs-01.loggly.com",
+        "port": 80,
+        "path": "/inputs/{loggly-token}/tag/http/",
         "logToConsole": true,
         "onlyLogLocally": false
       }

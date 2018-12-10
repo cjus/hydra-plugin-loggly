@@ -3,8 +3,8 @@ module.exports = (hydra, config) => {
   const Utils = hydra.getUtilsHelper();
 
   let serverRequest = new ServerRequest();
-  if (config.remoteLogger && config.remoteLogger.protocol) {
-    serverRequest.setProtocol(config.remoteLogger.protocol);
+  if (config.loggly && config.loggly.protocol) {
+    serverRequest.setProtocol(config.loggly.protocol);
   }
 
   /**
@@ -18,15 +18,15 @@ module.exports = (hydra, config) => {
     if (!hydra.initialized) {
       return;
     }
-    if (!hydra.config.plugins || !hydra.config.plugins.hydraLogger) {
-      console.error('Missing hydraLogger section in app config. See docs at: https://github.com/cjus/hydra-plugin-hls')
+    if (!hydra.config.plugins || !hydra.config.plugins.loggly) {
+      console.error('Missing loggly section in app config. See docs at: https://github.com/cjus/hydra-plugin-loggly')
       return;
     }
 
     let from = `${hydra.getServiceName()}:/`;
     let fromName = from.replace(':/','');
     let ts = new Date().getTime() / 1000 | 0;
-    let settings = hydra.config.plugins.hydraLogger;
+    let settings = hydra.config.plugins.loggly;
 
     if (settings.logToConsole === true) {
       let text;
@@ -40,10 +40,10 @@ module.exports = (hydra, config) => {
 
     if (!settings.onlyLogLocally) {
       serverRequest.send({
-        method: settings.remoteLogger.method,
-        port: settings.remoteLogger.port,
-        hostname: settings.remoteLogger.hostname,
-        path: settings.remoteLogger.path,
+        method: settings.loggly.method,
+        port: settings.loggly.port,
+        hostname: settings.loggly.hostname,
+        path: settings.loggly.path,
         headers: {
           'Content-Type': 'application/json'
         },
