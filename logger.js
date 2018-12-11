@@ -47,7 +47,7 @@ module.exports = (hydra, config) => {
         hostname: settings.hostname,
         path: settings.path,
         headers: {
-          'Content-Type': 'application/json'
+          'content-type': 'text/plain'
         },
         body: Utils.safeJSONStringify({
           ts,
