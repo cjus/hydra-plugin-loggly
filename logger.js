@@ -41,6 +41,14 @@ module.exports = (hydra, config) => {
     }
 
     if (!settings.onlyLogLocally) {
+      let entry = Utils.safeJSONStringify({
+        ts,
+        serviceName: fromName,
+        serviceVersion: hydra.getInstanceVersion(),
+        instanceID: hydra.getInstanceID(),
+        severity: type,
+        body: message
+      });
       serverRequest.send({
         method: settings.method,
         port: settings.port,
@@ -49,15 +57,11 @@ module.exports = (hydra, config) => {
         headers: {
           'content-type': 'text/plain'
         },
-        body: Utils.safeJSONStringify({
-          ts,
-          serviceName: fromName,
-          serviceVersion: hydra.getInstanceVersion(),
-          instanceID: hydra.getInstanceID(),
-          severity: type,
-          body: message
-        })
-      });
+        body: entry
+      })
+        .catch((err) => {
+          console.log(`Error logging this [${entry}] to loggly due to this err`, err);
+        });
     }
   }
 };

@@ -1,6 +1,6 @@
 {
   "name": "hydra-plugin-loggly",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Hydra Plugin for the Loggly Logging Service",
   "author": "Carlos Justiniano <carlos.justiniano@gmail.com>",
   "license": "MIT",
