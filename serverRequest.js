@@ -62,11 +62,9 @@ class ServerRequest {
         socket.setNoDelay(true);
         socket.setTimeout(options.timeout * 1000 || REQUEST_TIMEOUT, () => {
           req.abort();
-          reject(err);
         });
         socket.on('error', (error) => {
           req.abort();
-          reject(err);
         });
       });
 
